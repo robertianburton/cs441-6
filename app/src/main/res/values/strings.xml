@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">crowdcounter</string>
+    <string name="greeting">Guess How Many ...</string>
 </resources>
