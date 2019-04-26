@@ -1,0 +1,13 @@
+h1 {
+	font-family: arial;
+}
+
+/*CREATE TABLE IF NOT EXISTS `entries` (
+`id` int(11) NOT NULL auto_increment,
+`event` int(11),
+`guess` int(11),
+`name` varchar(64),
+`email` varchar(64),
+`ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+);*/
