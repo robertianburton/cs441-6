@@ -21,7 +21,7 @@
 	<body cz-shortcut-listen="true">
 
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-			<a class="navbar-brand" href="https://getbootstrap.com/docs/4.0/examples/starter-template/#">Crowd Counter</a>
+			<a class="navbar-brand" href="#">Crowd Counter</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -29,22 +29,15 @@
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/starter-template/#">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="https://getbootstrap.com/docs/4.0/examples/starter-template/#">Link</a>
+						<a class="nav-link" href="#">-</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link disabled" href="https://getbootstrap.com/docs/4.0/examples/starter-template/#">Disabled</a>
+						<a class="nav-link disabled" href="#">-</a>
 					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="http://example.com/" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown01">
-							<a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/examples/starter-template/#">Action</a>
-							<a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/examples/starter-template/#">Another action</a>
-							<a class="dropdown-item" href="https://getbootstrap.com/docs/4.0/examples/starter-template/#">Something else here</a>
-						</div>
-					</li>
+					
 				</ul>
 				<!-- <form class="form-inline my-2 my-lg-0">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -59,25 +52,43 @@
 				<h1>Crowd Counter</h1>
 				<p class="lead">Count stuff.<br>Together.</p>
 			</div>
-					<?php /*
+					<?php
 						$mysqli = mysqli_connect("mysql.cs.binghamton.edu", "rburton2","ahchaich9Hoh","rburton2_cs441");
-						$sql = "SELECT * FROM entries";
+						$sql = "SELECT * FROM entries ORDER BY id DESC";
 						$result = mysqli_query($mysqli, $sql);
-						mysql_close($mysqli);
-						echo $result;
+						mysqli_close($mysqli);
 						?>
-						<table class="table">
-					  <thead>
-					    <tr>
-					      <th scope="col">#</th>
-					      <th scope="col">First</th>
-					      <th scope="col">Last</th>
-					      <th scope="col">Handle</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-  					<?php
-						while ($row = $result->fetch_assoc()) {*/?>
+						<table class="table table-striped">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">Event</th>
+								<th scope="col">Guess</th>
+								<th scope="col">Name</th>
+								<th scope="col">Time</th>
+							</tr>
+						</thead>
+						<tbody >
+						<?php
+						while ($row = $result->fetch_assoc()) {?>
+							<tr id="<?php echo $row['id']; ?>">
+								<th scope="row">
+										<?php echo $row["id"]; ?>
+								</td>
+								<td>
+										Jelly Beans
+								</td>
+								<td>
+										<?php echo $row["guess"]; ?>
+								</td>
+								<td>
+										<?php echo $row["name"]; ?>
+								</td>
+								<td>
+										<?php echo $row["ts"]; ?>
+								</td>
+							</tr>
+						<?php } ?>
 							
 		</main><!-- /.container -->
 
