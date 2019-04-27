@@ -39,12 +39,17 @@ public class MainActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.
                         System.out.print(response);
-                        mainText.setText(response.substring(0,500));
+                        int maxL = 500;
+                        if(response.length()<500) {
+                            maxL = response.length();
+                        }
+                        mainText.setText(response.substring(0,maxL));
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 mainText.setText("That didn't work!");
+                System.out.println(error);
             }
         });
 
